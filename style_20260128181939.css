@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #667eea;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: #667eea;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #5a67d8;
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    animation: slideUp 0.5s ease;
+}
+
+.Positive {
+    background: #d4edda;
+    color: #155724;
+}
+
+.Negative {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.Neutral {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

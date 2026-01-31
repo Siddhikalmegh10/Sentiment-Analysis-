@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>💬 Twitter Sentiment Analyzer</h1>
+    <p>Enter a tweet and analyze its sentiment instantly</p>
+
+    <form method="POST">
+        <textarea name="tweet" placeholder="Type your tweet here..." required></textarea>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if sentiment %}
+    <div class="result {{ sentiment }}">
+        <h2>Result</h2>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+        <p><strong>Score:</strong> {{ score }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Sentiment Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="bg-blur"></div>
+
+<div class="card">
+    <h1>🤖 AI Sentiment Analyzer</h1>
+    <p class="subtitle">Analyze emotions behind tweets instantly</p>
+
+    <form method="POST">
+        <textarea name="tweet" placeholder="Type a tweet here..." required></textarea>
+        <button type="submit">✨ Analyze Now</button>
+    </form>
+
+    {% if sentiment %}
+    <div class="result {{ sentiment }}">
+        <h2>
+            {% if sentiment == 'Positive' %}😊 Positive
+            {% elif sentiment == 'Negative' %}😡 Negative
+            {% else %}😐 Neutral
+            {% endif %}
+        </h2>
+        <p>Confidence Score: <b>{{ score }}</b></p>
+    </div>
+    {% endif %}
+</div>
+
+<footer>
+    Made with ❤️ using NLP & Flask
+</footer>
+
+</body>
+</html>

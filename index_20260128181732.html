@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head></head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+>
+<title>Twitter Sentiment Analysis</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+<h1>Twitter Sentiment Analysis</h1>
+
+
+<form method="post">
+<textarea name="tweet" placeholder="Enter tweet here..." required>{{ text }}</textarea>
+<br>
+<button type="submit">Analyze</button>
+</form>
+
+{% if sentiment %}
+<div class="result">
+<h2>Sentiment: {{ sentiment }}</h2>
+<p>Score: {{ score }}</p>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
